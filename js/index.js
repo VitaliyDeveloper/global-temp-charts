@@ -74,7 +74,7 @@ function drawChart(labels, tempsGlobal, tempsNorth, tempsSouth) {
     options: {
       animations: {
         tension: {
-          duration: 2000,
+          duration: 1000,
           easing: "linear",
           from: 1,
           to: 0,
