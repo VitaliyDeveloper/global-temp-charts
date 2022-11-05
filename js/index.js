@@ -48,30 +48,39 @@ function drawChart(labels, tempsGlobal, tempsNorth, tempsSouth) {
         {
           label: "# Global temp",
           data: tempsGlobal,
-          backgroundColor: ["black"],
-          borderColor: ["black"],
+          backgroundColor: "rgba(129, 129, 129, 0.8)",
+          borderColor: "rgba(7, 7, 7, 0.8)",
           borderWidth: 1,
           fill: false,
         },
         {
           label: "# North temp",
           data: tempsNorth,
-          backgroundColor: ["blue"],
-          borderColor: ["blue"],
+          backgroundColor: "rgba(87, 187, 250, 0.8)",
+          borderColor: "rgba(87, 229, 224, 0.8)",
           borderWidth: 1,
           fill: false,
         },
         {
           label: "# South temp",
           data: tempsSouth,
-          backgroundColor: ["green"],
-          borderColor: ["green"],
+          backgroundColor: "rgba(83, 220, 101, 0.8)",
+          borderColor: "rgba(108, 247, 126, 0.8)",
           borderWidth: 1,
           fill: false,
         },
       ],
     },
     options: {
+      animations: {
+        tension: {
+          duration: 2000,
+          easing: "linear",
+          from: 1,
+          to: 0,
+          loop: true,
+        },
+      },
       scales: {
         y: {
           beginAtZero: false,
