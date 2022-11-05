@@ -5,13 +5,15 @@
     font-family: 'Playfair Display', sans-serif;
 }
 body {
-
     background-color:azure;
+   
+
 }
 
+/* HEADER */
 .header {
     text-align: center;
-    background-color:azure;
+    /* background-color:azure; */
     width: 100%;
     padding: 30px 20px;
 }
@@ -28,7 +30,28 @@ body {
     /* margin-bottom: 20px; */
 }
 
+
+/* MAIN */
 .js-chart {
     padding: 0 50px 30px 50px;
+    margin-bottom: 30px;
     
+}
+
+
+/* FOOTER */
+
+hr {
+border-color: rgba(180, 180, 180, 0.5);
+border-width: 2px;
+}
+
+.footer-container {
+   
+}
+
+.footer-container__text {
+    padding: 20px 50px;
+    text-align: center;
+    color: rgb(180, 180, 180);
 }

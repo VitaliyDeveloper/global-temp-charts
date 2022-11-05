@@ -1,9 +1,3 @@
-// async function fetchData() {
-//   const response = await fetch("./ZonAnn.Ts+dSST.csv");
-//   console.log(response);
-//   return response.text();
-// }
-
 const ctx = document.querySelector(".js-chart").getContext("2d");
 // console.log(ctx);
 const globalTemp = 14;
@@ -76,7 +70,7 @@ function drawChart(labels, tempsGlobal, tempsNorth, tempsSouth) {
         tension: {
           duration: 1000,
           easing: "linear",
-          from: 1,
+          from: 0.8,
           to: 0,
           loop: true,
         },
