@@ -27,3 +27,8 @@ body {
     font-weight: 400;
     /* margin-bottom: 20px; */
 }
+
+.js-chart {
+    padding: 0 50px;
+    
+}
