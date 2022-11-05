@@ -1,0 +1,19 @@
+{
+  "name": "global-temp-charts",
+  "version": "1.0.0",
+  "description": "Глобальная температура в графике библиотека Chartjs.org",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "Vitaliy Gerassimov",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "papaparse": "^5.3.2"
+  }
+}
