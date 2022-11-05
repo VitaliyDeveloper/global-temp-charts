@@ -11,7 +11,9 @@ const globalTemp = 14;
 fetchData()
   .then(parseData)
   .then(getLabelandData)
-  .then(({ years, temps }) => drawChart(years, temps));
+  .then(({ years, tempsGlobal, tempsNorth, tempsSouth }) =>
+    drawChart(years, tempsGlobal, tempsNorth, tempsSouth)
+  );
 
 function fetchData() {
   return fetch("./ZonAnn.Ts+dSST.csv").then((response) => {
@@ -27,14 +29,17 @@ function getLabelandData(data) {
   return data.reduce(
     (acc, entry) => {
       acc.years.push(entry.Year);
-      acc.temps.push(Number(entry.Glob) + globalTemp);
+      acc.tempsGlobal.push(Number(entry.Glob) + globalTemp);
+      acc.tempsNorth.push(Number(entry.NHem) + globalTemp);
+      acc.tempsSouth.push(Number(entry.SHem) + globalTemp);
+
       return acc;
     },
-    { years: [], temps: [] }
+    { years: [], tempsGlobal: [], tempsNorth: [], tempsSouth: [] }
   );
 }
 
-function drawChart(labels, data) {
+function drawChart(labels, tempsGlobal, tempsNorth, tempsSouth) {
   new Chart(ctx, {
     type: "line",
     data: {
@@ -42,9 +47,25 @@ function drawChart(labels, data) {
       datasets: [
         {
           label: "# Global temp",
-          data: data,
+          data: tempsGlobal,
           backgroundColor: ["black"],
-          borderColor: ["yellow"],
+          borderColor: ["black"],
+          borderWidth: 1,
+          fill: false,
+        },
+        {
+          label: "# North temp",
+          data: tempsNorth,
+          backgroundColor: ["blue"],
+          borderColor: ["blue"],
+          borderWidth: 1,
+          fill: false,
+        },
+        {
+          label: "# South temp",
+          data: tempsSouth,
+          backgroundColor: ["green"],
+          borderColor: ["green"],
           borderWidth: 1,
           fill: false,
         },

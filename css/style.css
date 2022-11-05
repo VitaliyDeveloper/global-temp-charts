@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Playfair Display', sans-serif;
+}
+body {
+
+    background-color:azure;
+}
+
+.header {
+    text-align: center;
+    background-color:azure;
+    width: 100%;
+    padding: 30px 20px;
+}
+
+.header__title {
+    font-weight: 700;
+    text-decoration: underline;
+    text-transform: uppercase;
+    
+}
+
+.header__theme {
+    font-weight: 400;
+    /* margin-bottom: 20px; */
+}
